@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part of Life</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: #e4e6ea;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(30, 30, 50, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 60px 50px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(52, 152, 219, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(155, 89, 182, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #74b9ff, #a29bfe, #fd79a8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(116, 185, 255, 0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(116, 185, 255, 0.3);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(116, 185, 255, 0.6);
+            }
+        }
+
+        .reading-text {
+            font-size: 1.2em;
+            color: #d1d5db;
+            margin: 40px 0;
+            text-align: left;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            border-left: 4px solid #74b9ff;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-dot {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #74b9ff;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        .floating-dot:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-dot:nth-child(2) {
+            top: 20%;
+            right: 15%;
+            animation-delay: 2s;
+            background: #a29bfe;
+        }
+
+        .floating-dot:nth-child(3) {
+            bottom: 30%;
+            left: 20%;
+            animation-delay: 4s;
+            background: #fd79a8;
+        }
+
+        .floating-dot:nth-child(4) {
+            bottom: 10%;
+            right: 10%;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-20px) scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 30px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            .reading-text {
+                font-size: 1.1em;
+                padding: 20px;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-dot"></div>
+        <div class="floating-dot"></div>
+        <div class="floating-dot"></div>
+        <div class="floating-dot"></div>
+    </div>
+    
+    <div class="container">
+        <div class="content">
+            <h1>Part of Life</h1>
+            
+            <div class="reading-text">
+                <p>ถ้ามีคนมาเจอข้อความนี้คนเขียนอาจตายไปแล้วหรือไม่ก็ยังมีชีวิตอยู่ เดี๋ยวจะเล่าเรื่องให้ฟังว่าเกิดอะไร</p>
+                
+                <p>29/09/2025 เกิดเรื่องเพราะตัวผมดันไปคบแฟนเก่าเพื่อนแล้วโดนแซะตามโน๊ตลงสตอรี่ด่าแต่ผมก็ไม่ได้สนใจอะไรมาก</p>
+                
+                <p>ตอนนี้ผมเหลือแฟนและตัวผมเองคนเดียวเพราะจำเป็นต้องตัดเพื่อนไปเพราะความโมโหของตัวเอง</p>
+
+                <p>หลังจากนนั้นผมรู้สึกแย่มากๆและเหมือนจะเป็นโรคซึมเศร้าแต่ผมจะหาทางออกตัวตัวเองเพราะผมพาแฟนมาลำบาแล้ว</p>
+
+                <p>ผมนั่นจะแก้ไขแล้วพยายามจะรวยขึ้นจะมีชื่อเสียงให้มากจะทำทุกอย่างให้แฟนสบายขึ้น</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // เพิ่มเอฟเฟกต์พิเศษเมื่อเลื่อนหน้า
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            document.querySelector('.floating-elements').style.transform = `translateY(${rate}px)`;
+        });
+
+        // เพิ่มเอฟเฟกต์เมื่อโหลดหน้า
+        window.addEventListener('load', () => {
+            document.querySelector('.container').style.animation = 'fadeInUp 1s ease-out';
+        });
+
+        // เพิ่ม CSS สำหรับ animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
